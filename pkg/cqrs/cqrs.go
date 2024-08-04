@@ -11,6 +11,10 @@ type Result[T any] struct {
 	Err   error
 }
 
+func (r Result[T]) Error() string {
+	return r.Err.Error()
+}
+
 func (r Result[T]) IsError() bool {
 	return r.Err != nil
 }
